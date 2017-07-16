@@ -1,0 +1,62 @@
+<?fdxml load="common.fdx"?>
+<head>
+<title>contact beingmeta.com</title>
+<link rel=stylesheet type="text/css" href="beingmeta.css">
+</head>
+<body>
+<L1HEADER title="Contact Us"/>
+
+<P>being<font color=red>m<font color=lightgreen>e<font
+color=blue>t<font color=yellow>a</font></font></font></font> is now in
+the seed phase of prototype development and funding.  We are actively
+recruiting outside investors and initial clients while collecting CVs
+from potential team members.  Below, you will find contact information
+for each of these areas:
+
+<TABLE WIDTH="80%" CELLPADDING=20>
+<TR><TH class=contact>Join</TH>
+
+    <TD class=contact>
+    Send your CV to <A HREF="mailto:careers@beingmeta.com">
+    careers@beingmeta.com</A>.  We are looking for individuals with
+    skills and experience in technology (particularly enterprise integration
+    and system design), marketing and sales (particularly in the media and
+    publishing sectors), and management (our management team is still being
+    fleshed out).  Most especially, however, we are interested in individuals
+    who are excited by both our <A HREF="technology.html">technology</A> and
+    our <A HREF="credo.html">credo</A>.
+
+    </TD></TR>
+<TR><TH class=contact>Invest</TH>
+    <TD class=contact>
+    We are currently seeking limited investment in beingmeta.  Please
+    contact us at <A HREF="mailto:invest@beingmeta.com">invest@beingmeta.com</A>
+    for more information or to discuss our current business plan.</TD></TR>
+<TR><TH class=contact>Explore</TH>
+    <TD class=contact>
+    We are currently seeking test-site clients, primarily in the media
+     and publishing sectors.  If you are interested, please contact us at
+     <A HREF="mailto:sales@beingmeta.com">clients@beingmeta.com</A>
+     </TD></TR>
+</TABLE>
+
+</body>
+
+<P>General email may be directed to <A
+HREF="mailto:contact@beingmeta.com">contact@beingmeta.com</A>.
+Postal mail may be sent to:
+<blockquote>
+beingmeta<BR>
+68 Bailey Street<BR>
+Dorchester, MA 02124
+</blockquote>
+    <div class='siteInfo'>
+ Copyright &copy; 2003-2005 beingmeta, inc.<br/>
+ <a href='/'>beingmeta</a>&nbsp;
+ <a href='/technology.fdxml>Technology</a>&nbsp;
+ <a href='/team.fdxml>Team</a>&nbsp;
+<a href='/credo.fdxml>Credo</a>&nbsp;
+ <a href='/about.fdxml>About</a>&nbsp;     
+ <a href='news.fdxml>News</a>&nbsp;
+</div>
+</body>

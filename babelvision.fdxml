@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<?fdxml load="common.fdx"?>
+<html>
+<head>
+<title>Introduction to BabelVision</title>
+<link rel=stylesheet type="text/css" href="/css/beingmeta.css">
+</head>
+<body class="ivorybg">
+<l1heading title="BabelVision">
+As information becomes cheaper, <em>information about information</em> will
+become more valuable
+</l1heading>
+
+<p class='L1'>Are you frustrated with searching for images?  Would you
+like to find them faster and more precisely?  Would you like to be
+able to share digital content with friends or colleagues?</p>
+
+<p>Using beingmeta's MetaKeys technology, individuals can
+describe images or other digital content using
+<strong>concepts</strong> rather than keywords.  This means that you
+can find each other's content regardless of the particular way you
+label it, without having to guess at the terms or keywords that might
+have been used.</p>
+
+<p>BabelVision guides the user in narrowing their keywords
+to a small set of unambiguous concepts drawn from a vast vocabulary of
+hundreds of thousands of concepts in multiple languages.  These
+concepts are connected to one another, so searching automatically and
+intelligently bridges different but related concepts.  The MetaKeys
+technology is fundamentally interlingual, so you are able to find an
+image even if someone labelled it using a different language!</p>
+
+<p>You can read more about BabelVision in "BabelVision: better image
+searching through shared annotations" in the March/April of <a
+href='http://acm.org/interactions/'>ACM Interactions</a>.  It is based
+in work on interlingual knowledge bases done at the MIT Media
+Laboratory.  You can read about this original work in the IBM Systems
+Journal (Vol. 39, Nos. 3&4, 2000).</p>
+
+<p>To learn more, contact us at <a
+href='mailto:babelvision@beingmeta.com'>babelvision@beingmeta.com</a>
+where we can send you a demonstration account and password for the
+<a href='bvlive'>live demonstration</a>.</p>
+
+</body>
+</html>

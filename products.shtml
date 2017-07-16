@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<?fdxml load="common.scm"?>
+<html>
+<head>
+<title>Our Products</title>
+<link rel='stylesheet' type="text/css" href="/css/beingmeta.css"/>
+<link rel='stylesheet' type="text/css" href="bmhome.css"/>
+</head>
+<body class="L1">
+<div class="header">
+<a href="/"><img src="/graphics/bmblock64" id="pagelogo" class="noborder"/></a>
+<div class="title">Products<span class="tagline"></span></div>
+<!--#include file="navbar_include.html" -->
+</div>
+<div class="body">
+
+<p><img src="/graphics/GNOSYS20" align="left" class="bullet"/>
+beingmeta's <em>semantic tools stack</em> provides scalable, robust,
+high-performance semantic computing in an open environment.  Our
+powerful technology enables advanced semantic and linguistic
+programming combined with rapid prototyping and seamless enterprise
+integration.  GNOSYS provides a set of core C and Java libraries for
+creating agile distributed applications and services easily molded to
+business demands.  In addition, GNOSYS leverages native parallelism
+(multiple core/CPU platforms) to support high-throughput text
+processing and semantic data mining on advanced hardware.
+</p>
+<br clear="both"/>
+
+<p><a href="http://services.beingmeta.com/"><img
+src="/graphics/bmservices64" align="left" alt="beingmeta services"
+class="bullet"/></a> beingmeta <strong>semantic services</strong>
+provide on-demand web services for linguistic and semantic analysis,
+allowing standalone and web-based applications to leverage advanced
+facilities through a simple interface at an accessible price.  These
+facilities include natural language tagging, named entity recognition,
+context and knowledge based sense disambiguation and access to the
+BRICO knowledge base of millions of concepts and individuals.</p> <br
+clear="both"/>
+
+<p><img src="/graphics/smartsites64" align="left" class="bullet"/>
+beingmeta's <strong>smart sites</strong> bring enhanced functionality
+to the end user, making it easier to search and share information
+across the web or your own organization.  <a
+href="http://www.bricobase.org/">bricobase</a> uses a rich organic
+ontology to harmonize folksonomies growing at various tagging sites
+around the web.  <a href="http://www.sidewize.net/">sidewize</a> uses
+semantic associations to help you phrase better searches for
+conventional search engines.</p>
+
+<!--#include file='footer_include.html' -->
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<?fdxml load="common.fdx"?>
+<html>
+<head>
+<title>GNOSYS</title>
+<link rel=stylesheet type="text/css" href="/css/beingmeta.css"/>
+</head>
+<body class='ivorybg'>
+<l1heading title="GNOSYS">
+managing organizational knowledge by <em>federating metadata</em>
+and building <em>background knowledge bases</em> through <em>textual
+data mining</em> based on <em>natural language content analysis</em>
+</l1heading>
+
+<dl CLASS="toplevel">
+<dt>federated metadata</dt>
+<dd>collects and harmonizes existing metadata from diverse sources
+into a common organization-wide resource.  This approach allows
+organization-wide access to shared knowledge and content while
+minimizing impact on the operations of existing productive business
+units.</dd>
+
+<dt>linguistic content analysis</dt>
+<dd>automatically generates fine-grained metadata describing existing
+textual content.  beingmeta's technologies are also
+<strong>multilingual</strong> through the modular integration of
+linguistic and semantic knowledge of different languages.  Current
+languages supported by <strong>GNOSYS</STRONG> include English, Spanish,
+French, Italian, Portugeuse, and Finnish.</dd>
+
+<dt>concept mining</dt>
+<dd>combines linguistic analysis with existing background knowledge bases
+to semi-automatically generate domain-specific knowledge bases and
+taxonomies which will aid in search, browsing, and business process
+automation.  This textual data mining creates interfaces for search
+and browsing which are customized to the structure, practices,
+products, and markets of a particular organization.</dd>
+
+<dt>an empirical KM practice</dt>
+<dd>uses the products of content analysis and concept mining to drive
+the refinement and articulation of organizational knowledge.
+Combining the top-down approach of conventional knowledge management
+consulting with the bottom-up identification of important themes and
+concepts, GNOSYS is a component of a novel and empirically based
+practice of knowledge management</dd>
+
+</body>
+
+</html>

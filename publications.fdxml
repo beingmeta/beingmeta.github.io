@@ -1,0 +1,63 @@
+<?fdxml load="common.fdx"?>
+<html>
+<head>
+<title>Publications</title>
+<link rel=stylesheet type="text/css" href="/css/beingmeta.css">
+</head>
+<body class="ivorybg">
+<l1heading title="Publications">
+beingmeta Announces New Release of FramerD Database & Development System Version 2.6.
+</l1heading>
+<div class="body">
+<dl class="toplevel">
+<dt>Articles<sub style="color:red;"></sub>
+</dt>
+<dd><span class="tdd">
+</span></dd>
+
+<dt>BabelVision<sub style="color:red;">Better Image Searching Through Shared Annotations</sub> 2.6
+   
+      
+  <a class='paper' href='docs/Interactions.pdf'>
+   </a>
+
+</dt>
+<dd>
+    
+
+</dd>
+
+<dt>ACM Multimedia October 2004<sub style="color:red;"></sub>
+ 
+</dt>
+<dd>(<a class='pub' href='http://www.acm.org/interactions/'>ACM Interactions (http://www.acm.org/interactions)</a>)
+    <span class="tdd2">purpe
+</span></dd>
+     
+
+</div>
+    
+   
+
+     
+
+</div>
+    <div class='siteInfo'>
+ Copyright &copy; 2003-2005 beingmeta, inc.<br/>
+ <a href='/'>beingmeta</a>&nbsp;
+ <a href='/technology.fdxml>Technology</a>&nbsp;
+ <a href='/team.fdxml>Team</a>&nbsp;
+<a href='/credo.fdxml>Credo</a>&nbsp;
+ <a href='/about.fdxml>About</a>&nbsp;     
+ <a href='news.fdxml>News</a>&nbsp;
+<a href='publications.fdxml>News</a>&nbsp;
+</div>
+
+</body>
+
+
+</html>
+
+
+
+

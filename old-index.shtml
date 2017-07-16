@@ -1,0 +1,78 @@
+<html>
+<head>
+<link rel='stylesheet' type="text/css" href="/css/beingmeta.css"/>
+<link rel='stylesheet' type="text/css" href="bmhome.css"/>
+<script src="bmhome.js" language="javascript"/>
+</head>
+<body id="bmhome">
+<table class="entrance">
+<tr>
+    <td class="upperleft upper left">
+      <div class="multi1" name="multi">
+        <a href="about.shtml" class="multi1">About</a>
+        <a href="about.shtml" class="multi2">Overview</a>
+        <a href="about.shtml" class="multi3">Background</a>
+      <div>
+    </td>
+    <td/>
+    <td class="upperright upper right">
+      <div class="multi1" name="multi">
+        <a href="products.shtml" class="multi1">Products</a>
+        <a href="products.shtml" class="multi2">Technology</a>
+        <a href="products.shtml" class="multi3">Nuts &amp; Bolts</a>
+      </div>
+    </td>
+</tr>
+<tr>
+    <td/>
+    <td class="bmlogotype middle">
+      <div class="multi">
+        <img src="/graphics/bmblock64.png" class="multi1" alt="beingmeta"/>
+      </div>
+     </td>
+    <td/>
+</tr>
+<tr>
+    <td/>
+    <td class="bmslogan middle">
+      because<br/>meaning<br/>matters
+     </td>
+    <td/>
+</tr>
+
+<tr>
+    <td class="lowerleft lower left">
+      <div class="multi1" name="multi">
+        <a href="team.shtml" class="multi1">Team</a>
+        <a href="team.shtml" class="multi2">People</a>
+        <a href="team.shtml" class="multi3">Management</a>
+      </div>
+    </td>
+    <td class="tagline middle bottom"></td>
+    <td class="lowerright lower right">
+      <div class="multi1" name="multi">
+        <a href="vision.shtml" class="multi1">Vision</a>
+        <a href="vision.shtml" class="multi2">Credo</a>
+        <a href="vision.shtml" class="multi3">Mission</a>
+      </div>
+    </td>
+</tr>
+<tr><th class="news" colspan="3">
+<br/>News:
+<a href='news/metamash.shtml' style="color: red; font-family: sans-serif;">
+beingmeta launches metamash.net</a>
+<br/>
+Recent Publications:
+  <a class='paper' href='docs'>
+   Saving SOA From Latency</a>
+
+</th></tr>
+    <tr><th class="w"></th>
+      <th id='entrance_text' class="center">
+          <br/>
+   <br/>
+<span class='bme_updateinfo'>updated 20 February 2007</span>
+  </th></tr>
+</table>
+</body>
+</html>

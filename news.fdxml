@@ -1,0 +1,164 @@
+<?fdxml load="common.fdx"?>
+<html>
+<head>
+<title>News</title>
+<link rel=stylesheet type="text/css" href="/css/beingmeta.css">
+</head>
+<body class="ivorybg">
+<l1heading title="News">
+beingmeta Announces New Release of FramerD Database & Development System Version 2.6.
+</l1heading>
+<div class="body">
+<dl class="toplevel">
+<dt>Framer<sub style="color:red;">D</sub>
+</dt>
+<dd><span class="tdd">
+is a free-form distributed object database supporting millions
+of objects and optimized for pointer-intensive structures and
+operations.  FramerD includes a variety of inference procedures and a
+scripting language based on R4RS scheme with special extensions for
+*non-determinstic programming* and sophisticated text and document
+handling.  FramerD comes with a high performance Apache-based servlet
+architecture which allows responsive web-based applications and
+template based scripting through interpreted FDXML files.</span></dd>
+ 
+<dt>Framer<sub style="color:red;">D</sub> 2.6
+    can be downloaded from <a http://www.sourceforge.net">Sourceforge</a> (
+    <a href="http://www.sourceforge.net/">www.sourceforge.net</a>)
+</dt>
+<dd>
+    
+<table class="chart" width="80%">
+<thead></thead><tfoot></tfoot>
+<tbody align="center" valign="top">
+<tr><th class='nw'>
+    Kind:</th>
+    <th class='n' >File:</th>
+    <th class='ne'> URL:
+   </th></tr>
+
+<tr><th class="w">[Source]</th>
+    <th class="center">
+framerd-2.6.1.tar.gz
+    </th>
+    <th class="e">  <a href="http://prdownloads.sourceforge.net/framerd/framerd-2.6.1.tar.gz?download">	
+        http://prdownloads.sourceforge.net/framerd/framerd-2.6.1.tar.gz?download</a></th></tr>
+<tr><th class="w">[WIN32]	</th>
+    <th class="center">
+fdinstall261.exe	
+    </th>
+    <th class="e">  
+         <a href="http://prdownloads.sourceforge.net/framerd/fdinstall261.exe?download">	 
+     http://prdownloads.sourceforge.net/framerd/fdinstall261.exe?download
+         </a>
+    </th></tr>
+    <tr><th class="w"> [OS X]	</th>
+    <th class="center">
+	FramerD.dmg	
+    </th>
+    <th class="e">  
+         <a href="http://prdownloads.sourceforge.net/framerd/FramerD.dmg?download">	
+         http://prdownloads.sourceforge.net/framerd/FramerD.dmg?download
+              </a>
+    </th></tr>
+        <tr><th class="w"> [x386 RPM]	 </th>
+    <th class="center">
+framerd-2.6.1-1	.i386.rpm 
+    </th>
+    <th class="e">  
+          <a http://prdownloads.sourceforge.net/framerd/framerd-2.6.1-1.i386.rpm?download">             
+                  http://prdownloads.sourceforge.net/framerd/framerd-2.6.1-1.i386.rpm?download
+                          </a>
+    </th></tr>
+            <tr><th class="w"> [Source RPM]			 </th>
+    <th class="center">
+framerd-2.6.1-1.src.rpm
+    </th>
+    <th class="e">  
+ <a href="http://prdownloads.sourceforge.net/framerd/framerd-2.6.1-1.i386.rpm?download">	
+                 http://prdownloads.sourceforge.net/framerd/framerd-2.6.1-1.i386.rpm?download
+    </a>
+    
+    </th></tr>
+<tr><th class="w">   [x386 DEB]		 	 </th>
+    <th class="center">
+[framerd_2.6.1-3	_i386.deb 
+    </th>
+    <th class="e">  
+
+     <a href="http://prdownloads.sourceforge.net/framerd/framerd-2.6.1-1.i386.rpm?download">	    
+    http://prdownloads.sourceforge.net/framerd/framerd-2.6.1-1.i386.rpm?download
+          </a>  
+    </th></tr>
+</tbody>
+</table>
+
+</dd>
+
+<dt>Framer<sub style="color:red;">D</sub> 2.6
+includes various bug fixes and expanded error handling but
+significantly adds: 
+</dt>
+<dd><span class="tdd2">
+* New kinds of file indices which scale effectively to multi-million
+       key tables <br>
+     * General improvements to FDSCRIPT module system<br>
+     * Defined more core primitive inference procedures especially around structured (assoc/pair) slots<br>
+     * Added generic facility for file/module reloading<br>
+     * Various frame operation  optimizations<br>
+     * Added new primitives for accessing serial ports (including USB serial ports)<br>
+     * Numerous fixes and additions to arithmetic functions in FDScript<br>
+     * Improvements to index caching performance<br>
+     * Added compound indices which combine multiple indices with a shared cache.<br>
+     * Added subservers on index servers, allowing a single server to provide several distinct index tables<br>
+     * Provided C API access to ints and strings in config files<br>
+     * New, simpler command line parsing API<br>
+     * Use long longs as OIDs if possible<br>
+     * Added support for largefiles (> 2GB) for pools and indices<br>
+     * Added synchronization for pools and indices<br>
+     * Use file memory mapping for file pools and indices for dramatically improved performance in many cases;v
+     * Further optimiziations to choice/set handling<br>
+     * Added "schema slotmaps" to reduce memory footprint for homogenous databases<br>
+     * Extensions to support extensive malloc debugging<br>
+     * Introduced interned ZSTRINGS as a core data type<br>
+     * Extended the frame data model by adding *adjuncts* which allow index mappings to specify particular slots of for particular pools.<br>
+     * Separated out get-methods and compute-methods<br>
+     * Different pools and indices on the same server now get their own network connection to reduce thread contention<br>
+     * Added finer grained locks for pool and index access to improve SMP performance.<br>
+     * Optimized index retrieval to return sorted choices<br>
+     * Added tools to manage malformed UTF-8 text (important for DMOZ integration)<br>
+     * Improved ability to preload indices to improve performance<br>
+     * Fixes to HTML/XML integration with special attention to XML<br>
+     * Fix mime parsing with BASE64 encoding<br>
+     * Added tools for parsing structured (tab, space, etc) plaintext<br>
+     * Separated out the FDTEXT and FDWWW libraries
+     * Made FDXML actually be usable and added callout models to have FDXML call Scheme to generate content.</span></dd>
+     
+
+</div>
+    
+    <dt>Framer<sub style="color:red;">D</sub> MORE INFORMATION: <a href="http://www.framerD.org/">FramerD.org</a>
+</dt>
+<dd><span class="tdd2">
+More Information and History on FramerD</span></dd>
+     
+
+</div>
+    <div class='siteInfo'>
+ Copyright &copy; 2003-2005 beingmeta, inc.<br/>
+ <a href='/'>beingmeta</a>&nbsp;
+ <a href='/technology.fdxml>Technology</a>&nbsp;
+ <a href='/team.fdxml>Team</a>&nbsp;
+<a href='/credo.fdxml>Credo</a>&nbsp;
+ <a href='/about.fdxml>About</a>&nbsp;     
+ <a href='news.fdxml>News</a>&nbsp;
+</div>
+
+</body>
+
+
+</html>
+
+
+
+

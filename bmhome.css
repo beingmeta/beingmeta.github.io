@@ -1,0 +1,77 @@
+body#bmhome {
+ background-color: ivory;
+ font-size: 36px;}  
+
+body.L1 {
+  background-color: ivory; color: black; font-size: 12pt;
+  margin-left: 10%; margin-right: 20%;}
+ 
+body.L1 p {
+  max-width: 50em; }
+
+div.header img#pagelogo { float: right; }
+div.header div.title {
+  font-family: sans,sans-serif;
+  font-size: 48px; color: purple; font-weight: bold;}
+div.header span.tagline {
+  font-size: 24px; color: purple; font-style: italic;
+  display: none;}
+
+body#bmhome a {
+  text-decoration: none;}
+body#bmhome a:visited {
+  color: blue;}
+body#bmhome a:hover {
+  text-decoration: none;}
+
+table.entrance {
+  font-family: sans,sans-serif; font-size: 36px; 
+  margin: 8px;}
+table.entrance th.news {
+  white-space: normal; font-size: 16px;}
+
+td.bmslogan {
+ font-style: italic;
+ color: brown; font-size: 24px;
+ line-height: 100%;}
+
+td.top { vertical-align: top; }
+td.center { vertical-align: center; }
+td.bottom { vertical-align: bottom; }
+
+td.left { width: 200px; text-align: left;}
+td.right { width: 200px; text-align: right;}
+td.middle { width: 300px; text-align: center;}
+
+td.tagline { font-size: 18px; color: purple;}
+
+
+div.multi1 a { display: none; }
+div.multi2 a { display: none; }
+div.multi3 a { display: none; }
+div.multi3 a { display: none; }
+
+div.multi1 a.multi1 { display: inline; }
+div.multi2 a.multi2 { display: inline; }
+div.multi3 a.multi3 { display: inline; }
+div.multi3 a.multi3 { display: inline; }
+
+div.navbar {
+  border-bottom: solid purple 3px;
+  font-family: arial,sans,sans-serif; font-weight: bold;
+  font-size: 150%;}
+div.navbar a { text-decoration: none;}
+div.navbar a:hover { text-decoration: underline;}
+
+/* div.footer { text-align: center; border-top: solid purple 2px;} */
+
+div.footer div.navbar { font-size: 75%; border-bottom: none;}
+
+p span.opensource {
+  font-weight: bold; font-variant: small-caps;
+  background-color: orange; color: brown;
+  padding: 5px; margin: 0px; text-indent: 0px;
+  float: right; text-align: right; 
+  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; 
+  margin-top: -7px; padding-top: 0px;}
+

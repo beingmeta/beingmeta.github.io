@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+               "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>beingmeta: because meaning matters</title>
+<script type="text/javascript" src="/static/fdjt/fdjt.js"
+        language="javascript"></script>
+<link rel='stylesheet' type="text/css" href="/static/fdjt/fdjt.css"/>
+<link rel='stylesheet' type="text/css" href="standard.css"/>
+<link rel='stylesheet' type="text/css" href="bmhome.css"/>
+<script type="text/javascript" src="standard.js"
+        language="javascript"></script>
+</head>
+<body curpage="ABOUT" seepage="ABOUT">
+<!--#include file='standard_header.html' -->
+<!--#include file='standard_leftcol.html' -->
+<div id="CONTENT">
+<div id="ABOUT" class="subpage">
+
+<!--#include file='about_content.html' -->
+
+</div>
+<div id="PRODUCTS" class="subpage">
+
+<!--#include file='products_content.html' -->
+
+</div>
+<div id="TEAM" class="subpage">
+
+<!--#include file='team_content.html' -->
+
+</div>
+<div id="MISSIONS" class="subpage">
+
+<!--#include file='missions_content.html' -->
+
+</div>
+<div id="BETAS" class="subpage">
+
+<!--#include file='betas_content.html' -->
+
+</div>
+<div id="LINKS" class="subpage">
+
+<!--#include file='links_content.html' -->
+
+</div>
+</div>
+<!--#include file='footer_include.html' -->
+</body>
+</html>

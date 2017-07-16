@@ -1,0 +1,46 @@
+(use-module '{fdwww fdtext bemeta})
+(set-default-encoding! "utf-8")
+(gset! %debug #t)
+(define (l1header . expr)
+  (div (class "header")
+       (table* (padding 1 align 'left class "pagehead" width "100%")
+	 (tr (td "&nbsp;")
+	     (th* (class "title") (xml-get expr 'title))
+	     (td* (align 'right valign 'top rowspan 2)
+	       (anchor "index.html"
+		       (image "/graphics/bmblock" class "noborder"
+			      alt "beingmeta"))))
+	 (tr (td "&nbsp;")
+	     (th* (class "tab")
+	       "[" (anchor "/about.fdxml" "About&nbsp;Us")  "]"
+	       "[" (anchor "/technology.fdxml" "Technology") "]"
+	       "[" (anchor "/credo.fdxml" "Credo") "]"
+	       "[" (anchor "/team.fdxml" "Team") "]"
+	       "[" (anchor "/news" "News") "]"
+	       "[" (anchor "/docs" "Publications") "]"
+	       "[" (anchor "mailto:contact@beingmeta.com" "Contact") "]")))
+       (br clear 'left) (hr)))
+(define (l1heading . expr)
+  (div (class "header")
+    (table* (padding 1 align 'left class "pagehead" width "100%")
+      (tr (td "&nbsp;")
+	  (th* (class "title") (xml-get expr 'title))
+	  (th* (class "tagline")
+	    (unparse-html (list 'span "" (xml-content expr))))
+	  (td "&nbsp;")
+	  (td* (align 'right valign 'top rowspan 2)
+	    (anchor "index.html"
+		    (image "/graphics/bmblock" class "noborder" alt "beingmeta"))))
+      (tr (td "&nbsp;")
+	  (th* (class "tab" colspan 3 align 'left)
+	    "[" (anchor "/about.fdxml" "About&nbsp;Us")  "]"
+	    "[" (anchor "/technology.fdxml" "Technology") "]"
+	    "[" (anchor "/credo.fdxml" "Credo") "]"
+	    "[" (anchor "/team.fdxml" "Team") "]"
+	    "[" (anchor "/news" "News") "]"
+	    "[" (anchor "/docs" "Publications") "]"
+	    "[" (anchor "mailto:contact@beingmeta.com" "Contact") "]")))
+    (br clear 'left) (hr)))
+(module-export! '{l1header l1heading})
+
+

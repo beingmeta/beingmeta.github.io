@@ -1,0 +1,78 @@
+<?fdxml load="common.fdx"?>
+<html>
+<head>
+<title>Our Technology</title>
+<link rel='stylesheet' type="text/css" href="/css/beingmeta.css">
+</head>
+<body class="ivorybg">
+<l1heading title="Technology">
+Processing based on <em>human meaning</em> grounded in <em>background knowledge bases</em>
+</l1heading>
+<div class="body">
+<dl class="toplevel">
+<dt>Framer<sub class="fdd">D</sub>
+[<a href="framerd.fdxml">more</a>]</dt>
+<dd><span class="tdd">
+is a robust, scalable semi-structured database developed at MIT
+for the creation and application of very large knowledge bases.
+FramerD was developed to support large, distributed, international
+knowledge-based applications.  FramerD is an open-source project whose
+primary development has moved from MIT to beingmeta, where the core
+product is being extended and hardened while new functions and
+capabilities are being added.</span></dd>
+    <br>
+    <dd><span class="tdd">
+<span class='new'>NEW!</span>January 2005: beingmeta is happy to announce is the latest stable release of the
+FramerD database and development system, version 2.6.  FramerD 2.6 can
+be downloaded from SourceForge (www.sourceforge.net) [<a href="news/framerd26.fdxml">DETAILS</a>]
+</span></dd>
+
+<dt>BRICO
+[<a href="brico">more</a>]</dt>
+<dd><span class="tdd">
+is a rich <em>background knowledge base</em> originally developed
+at MIT and currently being extended by beingmeta.  These extensions
+include links to other natural languages (besides English) and the
+addition of new concepts to the ontology.  Also, beingmeta is
+developing proprietary knowledge bases with more specialized concepts
+and particular economic and geographical knowledge.</span></dd>
+
+<dt>GNOSYS
+[<a href="gnosys.fdxml">more</a>]</dt>
+<dd><span class="tdd">
+is a framework for organizational content and knowledge management
+based on three key principles: the creation of <strong>federated metadata</strong> describing
+content and knowledge resources across the enterprise;
+application and creation of <strong>background knowledge bases</strong>
+to describe organization knowledge and information;
+<strong>detailed analysis</strong> of organizational content
+to improve information access and support decision-making
+</span></dd>
+
+<dt>BabelVision
+[<a href="babelvision.fdxml">more</a>]</dt>
+<dd><span class="tdd">
+is a demonstrator of multi-lingual information access applied to
+image archives and using the BRICO ontology.  Images in databases or
+on the web are described using <em>concepts</em> rather than keywords,
+allowing more precise searching as well as interlingual annotation and
+access.</span></dd>
+</dl>
+
+</div>
+    
+    <div class='siteInfo'>
+ Copyright &copy; 2003-2005 beingmeta, inc.<br/>
+ <a href='/'>beingmeta</a>&nbsp;
+ <a href='/technology.fdxml>Technology</a>&nbsp;
+ <a href='/team.fdxml>Team</a>&nbsp;
+<a href='/credo.fdxml>Credo</a>&nbsp;
+ <a href='/about.fdxml>About</a>&nbsp;     
+ <a href='/news'>News</a>&nbsp;
+<a href='/docs'>Publications</a>&nbsp;
+</div>
+
+</body>
+
+
+</html>

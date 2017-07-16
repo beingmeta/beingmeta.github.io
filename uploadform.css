@@ -1,0 +1,10 @@
+/* Upload form stylesheet */
+table.fdjtform { width: 100%; }
+body {
+       font-family: verdana,helvetica,sans,sans-serif;
+       font-size: 14px;}
+p.upload { 
+  margin-left: 6em; text-indent: -2em; font-weight: bold;}
+p.upload.failed {  color: red; }
+p.msg {  margin-left: 2em; }
+h1 img { width: 15%; float: right; }

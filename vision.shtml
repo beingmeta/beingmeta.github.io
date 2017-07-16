@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<?fdxml load="common.scm"?>
+<html>
+<head>
+<title>Credo, Vision, and Mission</title>
+<link rel="stylesheet" type="text/css" href="/css/beingmeta.css"/>
+<link rel="stylesheet" type="text/css" href="bmhome.css"/>
+</head>
+<body class="L1">
+<div class="header">
+<a href="/"><img src="/graphics/bmblock64" id="pagelogo" class="noborder"/></a>
+<div class="title">Credo
+<span class="tagline">
+clarity matters. people matter. diversity matters.  community matters.
+</span>
+</div>
+<!--#include file="navbar_include.html" -->
+</div>
+
+<p>beingmeta's technology emphasizes the value of human meanings and
+purposes.  As a company, we try to reflect this focus in our corporate
+culture and credo.
+</p>
+
+<dl class="toplevel">
+<dt>clarity matters.</dt>
+<dd>we believe in being clear and honest with customers, competitors,
+and stakeholders.  This extends beyond everyday business ethics to
+<em>technological honesty</em>: we think that our products may be able
+to transform how you and your organization work, but we are obliged to
+shoot down unrealistic expectations of either our own or our
+competitor's products.</dd>
+
+<dt>people matter.</dt>
+<dd>we understand the limits of technology and the value of people.
+As we develop solutions, we will focus on ways of enhancing and
+amplifying the wisdom and judgment of individuals, rather than
+replacing them.  And as a company, we are committed to treating our
+staff, customers, and partners in the same way.</dd>
+
+<dt>diversity matters.</dt>
+
+<dd>our products bring together a rich variety of approaches and
+techniques for meaningful computing.  Similarly, we value
+organizational diversity as a source of corporate creativity and
+robustness.  Whether among staff, customers, or partners, we welcome
+the differences that enrich and inform.  In an age when the global has
+become local, we believe in ``<strong>soulful globalization</strong>''
+as one of the best possible sources of diversity.  In soulful
+globalization, we "go international" not merely in search of markets
+or labor, but in search of imagination, ideas, and partnerships.</dd>
+
+<dt>community matters.</dt> <dd>innovation, success, and prosperity
+(not to mention happiness) rely on stable conscious communities.  We
+are committed to supporting the communities of our clients, our
+employees, and our technology by: active participation in
+international standards, direct involvement in our physical
+neighborhoods, support for employee involvement in community
+activities, and a solid commitment to contributing to the <a
+HREF="http://www.opensource.org/">open-source</a> community.</dd>
+
+</dl>
+<!--#include file='footer_include.html' -->
+</body>
+</html>

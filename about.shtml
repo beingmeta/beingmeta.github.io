@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>About beingmeta</title>
+<link rel='stylesheet' type="text/css" href="/css/beingmeta.css"/>
+<link rel='stylesheet' type="text/css" href="bmhome.css"/>
+</head>
+<body class="L1">
+<div class="header">
+<a href="/"><img src="/graphics/bmblock64" id="pagelogo" class="noborder"/></a>
+<div class="title">About Us
+<span class="tagline">Knowing what matters matters</span>
+</div>
+<!--#include file='navbar_include.html' -->
+</div>
+
+<p class="L1">being<span class="bmm">m</span><span
+class='bme'>e</span><span class='bmt'>t</span><span
+class='bma'>a</span> creates infrastructure, services, and
+applications for <strong>meaningful computing</strong>, a new
+computing paradigm based on the discrimination and representation of
+human meanings and purposes.</p>
+
+<p>Applications and services powered by beingmeta's technology can
+interpret, grasp, and use human meaning to be less awkward for users
+and more autonomous when appropriate.  Our vision is of a
+computational web which links people and processes across space, time,
+language, and culture, recognizing the connections which are important
+and dismissing the differences which are superficial.  Together with
+our clients and partners, we are building and supporting applications
+which increase productivity, reduce mistakes, and enable effective
+collaboration.</p>
+
+<p class="L1">Spun off from the <a
+href="http://www.media.mit.edu/">MIT Media Laboratory</a> in 2001,
+being<span class="bmm">m</span><span class='bme'>e</span><span
+class='bmt'>t</span><span class='bma'>a</span> is about trying to
+solve the genuninely hard problems of content and knowledge
+description while delivering solutions which work today.  We believe
+that this is the only way to deliver long-lived solutions, retain
+customers, and create a sustainable business.</p>
+
+<p class="L1">The company has developed an enterprise-class
+"meaningful computing" platform which supports large semantic
+knowledge bases and practical natural language processing, together
+with a rapid prototyping environment for web-based semantic
+applications and services.  The platform is both naturally distributed
+and deeply interlingual, making it a unique choice for organizations
+with global reach and scope.</p>
+
+<p class="L1">The company's technology has been deployed with major
+and minor companies around the globe, focused to date on media and
+information companies.  Our platform is a hybrid of protected and
+open-source technology developed over fifteen years of R&amp;D on
+meaning-based infrastructure and applications.</p>
+
+<p class="L1">We are currently open to new clients who have the vision
+to invest in solutions which will work now and in the future. [<a
+href="mailto:sales@beingmeta.com">email</a>] We are also looking for
+active outside investors who appreciate hard problems and are
+comfortable with our <a href="credo.fdxml">credo</a>.  [<a
+href="mailto:investors@beingmeta.com">email</a>]</p>
+    
+<!--#include file='footer_include.html' -->
+</body>
+</html>

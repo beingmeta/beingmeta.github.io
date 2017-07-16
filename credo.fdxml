@@ -1,0 +1,58 @@
+<?fdxml load="common.scm"?>
+<html>
+<head>
+<title>Our Credo</title>
+<link rel=stylesheet type="text/css" href="/css/beingmeta.css">
+</head>
+<body class="ivorybg">
+<l1heading title="Credo">
+avoid hype.  invest in people.  create community.  be truly global.
+</l1heading>
+
+<dl class="toplevel">
+
+<dt>avoid hype</dt>
+<dd>we have good ideas and impressive
+technology, but we can't solve every problem.  In dealing with investors,
+clients, and the press, we are committed to avoiding hype by giving the big
+picture of which we are a part.</dd>
+
+<dt>invest in people</dt>
+<dd>we understand the limits of
+technology and the value of people.  As we develop solutions, we will focus on
+ways of enhancing and amplifying the wisdom and judgment of individuals,
+rather than replacing them.  And as a company, we are committed to treating our
+own staff in the same way.</dd>
+
+<dt>create community</dt>
+<dd>
+innovation, success, and prosperity (not to mention happiness) rely on
+stable conscious communities.  We are committed to supporting the
+communities of our clients, our employees, and our technology by:
+active participation in international standards, support for employee
+involvement in community activities, and a solid commitment to
+contributing to the <a
+HREF="http://www.opensource.org/">open-source</a> community.</dd>
+
+<dt>be truly global</dt>
+<dd>we
+value diversity as a source of corporate creativity and robustness and
+believe in ``<strong>soulful globalization</strong>'' as one of the
+best possible sources of such diversity.  In soulful globalization, we "go
+international" not merely in search of markets or labor, but in search
+of imagination, ideas, and partnerships.</dd>
+
+</dl>
+    <div class='siteInfo'>
+ Copyright &copy; 2003-2005 beingmeta, inc.<br/>
+ <a href='/'>beingmeta</a>&nbsp;
+ <a href='/technology.fdxml>Technology</a>&nbsp;
+ <a href='/team.fdxml>Team</a>&nbsp;
+<a href='/credo.fdxml>Credo</a>&nbsp;
+ <a href='/about.fdxml>About</a>&nbsp;     
+ <a href='/news'>News</a>&nbsp;
+<a href='/docs'>Publications</a>&nbsp;
+</div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+body {
+  font-family: sans,sans-serif;
+  background-color: ivory;
+  color: black;
+  font-size: 18px;}
+
+a[HREF] { color: blue; }
+a[NAME] { font-weight: bold; }
+
+div#HEADER {
+  height: 80px; padding-left: 12px; padding-right: 6px;
+  width: 99%; margin-left: 2px; margin-right: 2px;
+  border-bottom: solid gray 2px;} 
+
+div.mantra { font-weight: bold; font-style: italic; color: brown;}
+
+div#HEADER div.news {
+  float: left; margin-right: 350px; clear: left;}
+
+div#HEADER div.news div.item  {
+  margin-left: 18px; text-indent: -18px;
+  color: orange; margin-bottom: 8px;}
+div#HEADER div.news div.item a {
+  color: blue; text-decoration: none;}
+div#HEADER div.news div.item a:hover {
+  text-decoration: underline;}
+div#HEADER div.news div.item span.new {
+  color: red;}
+div#HEADER div.news div.item span.tag {
+  color: orange; font-weight: bold;}
+div#HEADER div.news div.item span.date {
+  color: silver; font-size: 80%;}
+
+div#HEADER div.xlogotype img { margin-bottom: 0px; padding-bottom: 0px;}
+div#HEADER div.logotype {
+  text-align: right; line-height: 100%;
+  position: absolute; right: 8px; top: 3px;}
+div#HEADER div.logotype {
+  float: right; text-align: right; clear: right;}
+
+div#LEFTCOL {
+  text-align: right;
+  position: absolute; left: 5px; top: 100px;
+  font-size: 32px; padding-left: 6px;
+  width: 180px; margin-top: 12px;
+  padding-right: 8px;
+  border-right: solid purple 3px;}
+
+div#LEFTCOL a { 
+  display: block; text-decoration: none; color: gray;
+  text-align: right;
+  margin-bottom: 18px; border: 0px;}
+
+div#LEFTCOL a:hover { 
+  text-decoration: underline; color: #404040;}
+div#LEFTCOL a:active { 
+  border: none;}
+div#LEFTCOL a:focus { 
+  text-decoration: none; outline: none;
+  border: none;}
+
+body[seepage='ABOUT'] div#LEFTCOL a[subpage='ABOUT'] { 
+  color: black; font-weight: bold;}
+body[seepage='PRODUCTS'] div#LEFTCOL a[subpage='PRODUCTS'] { 
+  color: black; font-weight: bold;}
+body[seepage='BETAS'] div#LEFTCOL a[subpage='BETAS'] { 
+  color: black; font-weight: bold;}
+body[seepage='TEAM'] div#LEFTCOL a[subpage='TEAM'] { 
+  color: black; font-weight: bold;}
+body[seepage='LINKS'] div#LEFTCOL a[subpage='LINKS'] { 
+  color: black; font-weight: bold;}
+body[seepage='LEARNINGMASH'] div#LEFTCOL a[subpage='LEARNINGMASH'] { 
+  color: black; font-weight: bold;}
+body[seepage='MISSIONS'] div#LEFTCOL a[subpage='MISSIONS'] { 
+  color: black; font-weight: bold;}
+
+body[seepage='ABOUT'][preview] a[subpage='ABOUT'] { 
+  color: gray; }
+body[seepage='PRODUCTS'][preview] a[subpage='PRODUCTS'] { 
+  color: gray; }
+body[seepage='BETAS'][preview] a[subpage='BETAS'] { 
+  color: gray; }
+body[seepage='TEAM'][preview] a[subpage='TEAM'] { 
+  color: gray; }
+body[seepage='LINKS'][preview] a[subpage='LINKS'] { 
+  color: gray; }
+body[seepage='LEARNINGMASH'][preview] a[subpage='LEARNINGMASH'] { 
+  color: gray; }
+body[seepage='MISSIONS'][preview] a[subpage='MISSIONS'] { 
+  color: gray; }
+
+div#CONTENT {
+  text-align: left;
+  margin-left: 200px;
+  min-height: 300px;}
+div#CONTENT h2 { 
+  text-align: right; color: green;
+  border-bottom: solid green 5px;}
+div#CONTENT p {
+   clear: both;
+   font-size: 20px; line-height: 120%; max-width: 40em;
+   text-indent: -12px; margin-left: 24px; margin-bottom: 8px;}
+div#CONTENT p.noindent { text-indent: 0px;}
+div#CONTENT p img.bullet { clear: left; margin-left: -24px; padding-right: 1em;}
+div#CONTENT p span.inhead {  color: gray; font-size: 120%;}
+
+div#CONTENT div.subpage {  display: none; }
+
+body[preview] div.subpage { max-height: 400px; overflow: hidden;}
+body[preview] div.subpage { overflow: hidden;}
+
+div#CONTENT div.subpage span.detail { display: none;}
+
+body[seepage='ABOUT'] div#CONTENT div.subpage#ABOUT { display: block; }
+body[seepage='PRODUCTS'] div#CONTENT div.subpage#PRODUCTS { display: block; }
+body[seepage='TEAM'] div#CONTENT div.subpage#TEAM { display: block; }
+body[seepage='BETAS'] div#CONTENT div.subpage#BETAS { display: block; }
+body[seepage='LINKS'] div#CONTENT div.subpage#LINKS { display: block; }
+body[seepage='LEARNINGMASH'] div#CONTENT div.subpage#LEARNINGMASH { display: block; }
+body[seepage='MISSIONS'] div#CONTENT div.subpage#MISSIONS { display: block; }
+
+div#FOOTER {
+  float: right;
+  text-align: right;
+  padding-top: 18px;
+  margin-left: 175px;}
+
+span.bmm {
+ color: rgb(255,0,0);}
+span.bme {
+ color: rgb(228,100,17);}
+span.bmt {
+ color: green;}
+span.bma {
+ color: rgb(0,0,255);}
+
+span.meta { font-size: 130%; color: darkgoldenrod;}
+
+a img { border: none;}
+
+p img { padding-right: 4px;}
+
+tt { font-family: courier,fixed;}
+
+span.meta tt { font-weight: bold; }
+
+div.footer { 
+  padding-top: 12px; padding-bottom: 6px; padding-left: 2em;
+  border-top: solid purple 2px;
+  float: right; text-align: right;
+  font-size: 70%;}
+
+div.navbar {
+  border-bottom: solid purple 3px;
+  font-family: arial,sans,sans-serif; font-weight: bold;
+  font-size: 150%;}
+div.navbar a { text-decoration: none;}
+div.navbar a:hover { text-decoration: underline;}
+
+div.footer div.navbar { font-size: 75%; border-bottom: none;}
+
+span.comingsoon {
+  font-size: 12px; color: red; font-weight: bold;
+  line-height: 100%;
+  /* background-color: yellow;  */
+  float: right; text-align: right;
+}
+
+span.opensource {
+    float: right; text-align: right; margin: 4px; margin-top: 1px;
+    padding: 0.5ex; font-weight: bold; border-radius: 0.5em;
+    text-indent: 0px;
+    background-color: orange; color: blue;}

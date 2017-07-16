@@ -1,0 +1,183 @@
+;;; -*- Mode: Scheme; -*-
+
+(use-module '{reflection})
+(use-module '{fdweb xhtml xhtml/signature aws/s3 xhtml/tableout})
+
+(define sigkey (config 'uploadkey))
+
+(define (main (files #f) (remote_user #f) (https #f)
+	      (script (req/get 'script_name))
+	      (destination #f) (email #f) (expires #f) (sig #f))
+  (stylesheet! "/static/fdjt/fdjt.css")
+  (stylesheet! "uploadform.css")
+  (javascript! "/static/fdjt/fdjt.js")
+  (javascript! "uploadform.js")
+  (cond ((and script (has-suffix script "/upload_link"))
+	 (cond ((not remote_user)
+		(req/set! 'status 400)
+		(p "Sorry, you're not logged in."))
+	       (email (req/call makeuploadlink))
+	       (else (req/call uploadlinkform))))
+	((not https)
+	 (sorry "The upload form only works over a secure (HTTPS) connection."))
+	((and expires (> (time) expires))
+	 (sorry "This upload URL has expired!"))
+	((and remote_user (not files)) (req/call uploadform))
+	(remote_user (req/call handleupload))
+	((not sig) (sorry "This upload URL isn't signed"))
+	((not email) (req/call emailform))
+	((not (sig/check (base16->packet sig)
+		  sigkey 'email email 'expires expires))
+	 (sorry "There's a problem with the signature of this URL.  "
+		"Perhaps you've entered the wrong email address "
+		"(which was specified by the sender)"))
+	((not files) (req/call uploadform))
+	(else (req/call handleupload))))
+
+(define (sorry . msg)
+  (h1 (img src "/static/g/beingmeta/bmbanner.svgz"
+	   bmp "/static/g/beingmeta/bmbanner100w.png"
+	   alt "beingmeta")
+    "There was a problem")
+  (req/set! 'status 300)
+  (p* ((class "msg"))
+    (if (and (= (length msg) 1) (procedure? (car msg)))
+	((car msg)) (apply glom msg))))
+
+(define (emailform (expires #f) (email #f) (sig #f))
+  (h1 (img src "/static/g/beingmeta/bmbanner.svgz"
+	   bmp "/static/g/beingmeta/bmbanner100w.png"
+	   alt "beingmeta")
+    "Upload confirmation")
+  (xmlblock FORM
+      ((ACTION "https://dev.beingmeta.com/upload")
+       (METHOD "POST"))
+    (table* ((class "fdjtform"))
+      (tr (th)
+	  (td "Please enter your email address to confirm your identity.")
+	  (td))
+      (tr (th "Email")
+	  (td (input type "TEXT" NAME "EMAIL" VALUE (or email "")
+	      PLACEHOLDER "your email"))
+	  (td (input type "SUBMIT" NAME "ACTION" VALUE "OK")))
+      (tr (th)
+	  (td "This is the email address specified by the originator "
+	      "of the download link.")
+	  (td (input type "SUBMIT" NAME "ACTION" VALUE "OK"))))
+    (input TYPE "HIDDEN" NAME "EXPIRES" VALUE expires)
+    (input TYPE "HIDDEN" NAME "SIG" VALUE sig)))
+
+(define (uploadform (expires #f) (email #f) (sig #f))
+  (h1 (img src "/static/g/beingmeta/bmbanner.svgz"
+	   bmp "/static/g/beingmeta/bmbanner100w.png"
+	   alt "beingmeta")
+    "Uploading files for " (tt (write email)))
+  (xmlblock FORM ((ACTION "https://dev.beingmeta.com/upload")
+		  (enctype "multipart/form-data")
+		  (METHOD "POST"))
+    (input TYPE "HIDDEN" NAME "EXPIRES" VALUE expires)
+    (input TYPE "HIDDEN" NAME "SIG" VALUE sig)
+    (table* ((class "fdjtform"))
+      (tr (th "Email")
+	  (td (input TYPE "TEXT" NAME "EMAIL" VALUE (or email "")))
+	  (td (input TYPE "SUBMIT" NAME "ACTION" VALUE "UPLOAD")))
+      (tr (th 1)
+	  (td (input TYPE "HIDDEN" NAME "FILES" VALUE "FILE1")
+	      (input TYPE "FILE" NAME "FILE1")))
+      (tr* ((id "LASTROW"))
+	(th (anchor "javascript:addFileRow(event);" "Add"))
+	(td "another file to upload.")))))
+
+(define (handleupload (files #f) (expires #f) (email #f) (sig #f))
+  (if (or (fail? files) (not files) (fail? (req/get files #{})))
+      (req/call uploadform)
+      (if (not (sig/check (base16->packet sig)
+		   sigkey 'email email 'expires expires))
+	  (sorry "There's a problem with the signature of this URL.  "
+		 "Perhaps you've entered the wrong email address "
+		 "(which was specified by the sender)")
+	  (let* ((path (glom email "/" (get (timestamp) 'iso) "/"))
+		 (root (s3/mkpath "upload.beingmeta.com" path))
+		 (count 0))
+	    (h1 (img src "/static/g/beingmeta/bmbanner.svgz"
+		     bmp "/static/g/beingmeta/bmbanner100w.png"
+		     alt "beingmeta")
+		"Uploading " (choice-size files) " file"
+	      (if (> (choice-size files) 1) "s")
+	      " for " (write email))
+	    (do-choices (file files)
+	      (when (req/get file)
+		(let* ((name (req/get (glom file "_FILENAME") (glom file)))
+		       (ctype (req/get (glom file "_UTYPE")
+				       (pickstrings
+					(req/get (glom file "_TYPE")
+						 "application"))))
+		       (result (s3/write! (s3/mkpath root name)
+				 (req/get file)
+				 ctype)))
+		  (cond ((>= 200 (get result 'status) 299)
+			 (set! count (1+ count))
+			 (p* ((class "upload"))
+			   "Uploaded " name " with type " ctype))
+			(else
+			 (logwarn "Upload of " ctype " " name
+				  " by " email
+				  " failed: " result)
+			 (p* ((class "upload failed"))
+			   "Problem uploading " name " with type " ctype))))))
+	    (p* ((class "msg")) count " file" (if (> count 0) "s")
+	      " have been uploaded and saved beneath "
+	      (tt path) " ("
+	      (anchor* (scripturl "mailto:"
+			   'subject path
+			   'body (stringout count " file"
+				   (if (> count 0) "s")
+				   " have been uploaded by "
+				   (write email) " to "
+				   (s3loc/uri root)))
+		  ((target "_blank"))
+		"Send mail about this upload")
+	      ").")))))
+
+
+(define (uploadlinkform (email #f) (expires #f))
+  (h1 (img src "/static/g/beingmeta/bmbanner.svgz"
+	   bmp "/static/g/beingmeta/bmbanner100w.png"
+	   alt "beingmeta")
+    "Create upload link")
+  (xmlblock FORM ((class "uploadlink"))
+    (table* ((class "fdjtform"))
+      (tr (th "For email")
+	  (td (INPUT TYPE "TEXT" NAME "EMAIL" VALUE (or email "")))
+	  (td (INPUT TYPE "SUBMIT" NAME "ACTION" "Link")))
+      (tr (th "Expires in")
+	  (td
+	   (xmlblock SELECT ((NAME "EXPIRES"))
+	     (xmlblock OPTION ((VALUE (+ (time) (* 6 3600))))
+	       "six hours")
+	     (xmlblock OPTION ((VALUE (+ (time) (* 24 3600))))
+	       "one day")
+	     (xmlblock OPTION
+		 ((VALUE (+ (time) (* 7 24 3600)))
+		  (SELECTED "SELECTED"))
+	       "one week")
+	     (xmlblock OPTION ((VALUE (+ (time) (* 30 7 24 3600))))
+	       "30 days")))))))
+
+(define (makeuploadlink (email #f) (expires (+ (time) (* 24 3600))))
+  (h1 (img src "/static/g/beingmeta/bmbanner.svgz"
+	   bmp "/static/g/beingmeta/bmbanner100w.png"
+	   alt "beingmeta")
+    "Upload link for " email)
+  (p "Here is an upload link for " (write email) " which expires "
+    (get (timestamp expires) 'string) ".")
+  (xmlblock BLOCKQUOTE ()
+    (P (anchor (scripturl "https://dev.beingmeta.com/upload"
+		   'expires expires
+		   'sig (packet->base16
+			 (sig/make sigkey 'email email 'expires expires)))
+	 "upload files here"))))
+
+
+
+

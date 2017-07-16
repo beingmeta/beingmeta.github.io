@@ -1,0 +1,21 @@
+(use-module '{fdweb xhtml})
+
+(config! 'traceweb #t)
+
+;(define (fact n) (if (= n 0) 1 (* n (fact (-1+ n)))))
+;(define (fact n) (if (= n 0) "one" (* n (fact (-1+ n)))))
+(define (fact i (n 1)) (if (eq? i 0) n (fact (-1+ i) (* i n) )))
+
+(define (main (doexit #f))
+  (title! "Demo test script")
+  (javascript! "/javascript/fdweb.js")
+  (javascript! "/javascript/richtips.js")
+  (stylesheet! "/css/fdweb.css")
+  (stylesheet! "/css/metakeys.css")
+  (stylesheet! "/css/richtips.css")
+  (h1 "Test of mod_fdserv script execution")
+  (P "The factorial of five is " (fact 5))
+  (if doexit (exit)))
+
+
+
