@@ -1,0 +1,178 @@
+<?fdxml load="knoduleshome.scm"?>
+<html>
+<head>
+<title>knodules.net: a little knowledge can be a wonderful thing</title>
+<meta name="KNODULE" content="knodules.org"/>
+<link rel='stylesheet' type='text/css' 
+      href='http://static.beingmeta.com/fdjt/fdjt.css'/>
+<link rel='stylesheet' type='text/css' 
+      href='http://static.beingmeta.com/fdjt/misc.css'/>
+<link rel='stylesheet' type='text/css' 
+      href='http://static.beingmeta.com/knodules/knodules.css'/>
+<link rel='stylesheet' type='text/css' href='knoduleshome.css'/>
+<script language='javascript' 
+        src='http://static.beingmeta.com/fdjt/fdjt.js'>
+</script>
+<script language='javascript'
+        src='http://static.beingmeta.com/knodules/knodules.js'>
+</script>
+<script language='javascript' 
+        src='http://static.beingmeta.com/knodules/html.js'>
+</script>
+<script language='knodule' src="knodules.kno"></script>
+<style>
+  div.cutout { 
+   width: 25%; float: right; padding: 10px; 
+   margin-left: 5px; margin-bottom: 5px; 
+   background-color: gold; color: black;
+   font-size: 80%;}
+  div.cutout span.inhead { color: darkgreen;}
+</style>
+</head>
+<body onload='fdjtSetup();knoHTMLSetup();'
+      onclick='fdjtRichTip_onclick(event);'
+      onmouseover='fdjtRichTip_onmouseover(event);'
+      onnmouseout='fdjtRichTip_onmouseout(event);'>
+<pagehead>
+  KNODULES<span class="tld">.net</span>
+  <div class="subtitle">a little knowledge can be a wonderful thing</div>
+</pagehead>
+<div class="cutout"><span class="inhead">Knodules</span> <strong>don't
+describe the world directly</strong> but articulate linguistic
+distinctions, generalities, and connections for a <strong>limited
+domain</strong> across an <strong>engaged community</strong>.
+<span class="inhead">Knodules</span> characterize "<strong>what a
+community can agree on</strong>" including articulating differences
+which they don't agree on.</div>
+
+<p><dterm dterm="knodule">knodules:vocabulary</dterm> are
+(relatively) small knowledge bases used by groups or individuals to
+organize particular pools of content or other information.  Knodules
+help people share knowledge and organize activity while making it
+easier to navigate and search large and complex documents or
+collections.</p>
+
+<p><span class="inhead">Key concepts</span> for understanding 
+how knodules distinguish and connect meanings:
+<ul>
+
+<li><span class="inhead">dterms</span> are 'disambiguated terms' which
+have exactly one meaning in the domain of the knodule.  These may be
+words in a natural language (like 'bank' or 'platypus') which are
+unambiguous in the given domain.  Alternatively, they can also be
+<strong>compound dterms</strong> which disambiguate a potentially
+ambiguous term (like <dterm>bank:institution</dterm> or <dterm>Paris,
+Texas</dterm>);</li> <li><span class="inhead">synonyms</span> are
+natural language terms which are sometimes used, in the context of the
+domain, to refer to a dterm (or the concept it identifies);</li>
+
+<li><span class="inhead">genls</span> are dterms which are broader in
+application than a particular dterm; for example,
+<dterm>animal</dterm> could typically be a <sym>genl</sym> of
+<dterm>dog</dterm>.  The <sym>genl</sym> relation is also domain
+specific; in some domains, <dterm>pet</dterm> might be a a
+<sym>genl</sym> of <dterm>dog</dterm>, but in another domain it might
+not.  The inverse or <strong>mirror</strong> of <sym>genls</sym> is
+<sym>specls</sym>: if x is a <sym>genl</sym> of y, then y is a
+<sym>specl</sym> of x.</li>
+
+<li><span class="inhead">roles</span> are dterms which imply a context
+and can be used to describe the relationship of another term to the
+context.  For example, <dterm>mother</dterm> is a role which is
+defined with respect to some children (more on <a
+href="semantics.fdxml">knodule semantics</a>)</li>
+
+<li><span class="inhead">drules</span> are cues to help disambiguate
+natural language to dterms and generally consist of a synonym and a
+set of other dterms (called contexts).  For example, a drule for
+<dterm>fish:animal</dterm> (distinguished from
+<dterm>fish:food</dterm>), might have the synonym of 'fish' and a
+context of the dterm <dterm>swimming</dterm>.</li>
+
+</ul>
+</p>
+
+<p><span class="inhead">That's it.</span>  beingmeta developed
+knodules as a lightweight representation scheme which
+is <strong>simple</strong>, rooted in <strong>natural</strong>
+language, and computationally <strong>useful</strong> for search and
+browsing.  beingmeta is developing tools to help users
+semi-automatically create knodules and for linking knodules to one
+another to allow search and browsing over larger collections.</p>
+
+<p><span class="inhead">Open-source tools</span> are being actively
+developed by beingmeta to allow the use of knodules from a range of
+programming languages, including Javascript, Python, Perl, PHP, and
+Java.  Knodules are also used by
+beingmeta's <a href="http://www.webechoes.net/">WebEchoes</a> social
+browsing site and the new <a href="http://www.sbooks.net">sBooks
+platform</a>.  We are actively developing tools and services to help
+individuals and communities create high-quality effective knodules for
+their content or problem domains.</p>
+
+<p><span class="inhead">Microformats</span> for describing knodules
+make it easy to author or embed knodules in various contexts.  The three
+core microformats are for plaintext, embedded HTML, and XML.</p>
+
+<p>The <span class="inhead">plaintext</span> microformat is a simple
+text format for describing knodules.  Described in
+detail <a href="plaintext.fdxml">here</a>, the plaintext microformat
+looks like this:
+<div class="example">
+Al Gore|Albert Gore Jr.|Goracle|^Nobel laureate|^vice-president(Bill Clinton)|.spouse=Tipper Gore|&global warming|?Gore&amp;Bill Clinton
+</div>
+which introduces the dterm <span class="dterm">Al Gore</span> with
+synonyms 'Albert Gore Jr.' and 'Goracle', a <sym>genl</sym> of <span
+class="dterm">Nobel laureate</span>, a <sym>genl</sym> of <dterm>US
+vice-president</dterm> with respect to <dterm>Bill Clinton</dterm>,
+and a drule which says that the word 'Gore' probably refers to the
+dterm <dterm>Al Gore</dterm> in the context of the dterm <dterm>Bill
+Clinton</dterm>.
+</p>
+<p>The <span class="inhead">html</span> microformat defines attributes
+which can embed knodule information as attributes in HTML content.
+This microformat is detailed <a
+href="html.fdxml">here</a> and looks like:
+<pre>
+&lt;p dterm="Pallas Athena" synonyms="Athena"
+   genls="greek goddess" drules="Athena&Zeus" roles="mother.Ulysses"&gt;
+Athena was the greek goddess known for wisdom and as the mother of Ulysses.
+&lt;/p&gt;
+</pre>
+If you're being strict, you can use attributes defined in
+the <tt class="uri"> http://knodules.net/</tt> namespace, but most
+knodule tools work even if you use raw attributes (though they
+might not validate against your chosen DTDs).
+</p>
+<p>Of course, we have to have an <span class="inhead">xml</span>
+microformat, which is described in
+detail <a href="xml.fdxml">here</a>.  The XML microformat
+looks like this:
+<pre>
+&lt;dterm dterm="Ken's dog Rufus" domain="example.knodules.net"&gt;
+  &lt;synonym&gt;Rufus&lt;/synonym&gt;
+  &lt;synonym&gt;RUFUS!&lt;/synonym&gt;
+  &lt;genl&gt;dog:animal&lt;/genl&gt;
+  &lt;genl&gt;deceased&lt;/genl&gt;
+  &lt;genl&gt;friend&lt;/genl&gt;
+  &lt;role role="guardian"&gt;Ken Haase&lt;/role&gt;
+  &lt;gloss lang="en"&gt;Rufus was among my best friend for many years across
+    many nations and organizations.  He is missed.
+  &lt;/gloss&gt;
+&lt;/dterm&gt;
+</pre>
+which should be relatively self explanatory.  Note that this explicitly
+indicates the 'domain' (which is a unique ID) for the knodule.  The XML
+format also provides for the specification of information in attributes
+as well as embedded elements.  The designated namespace for the XML
+microformat is also <tt class="uri">http://knodules.net/</tt> and
+we will eventually have a formal <a href="xml.dtd" class="deadlink">DTD</a>
+and <a href="xmlschema.xml" class="deadlink">schema</a>.
+</li>
+</ul>
+<div class="footer">
+A product of <a href="http://www.beingmeta.com/"><img src="static/graphics/bmbanner120.png" alt="beingmeta" width="120" height="33"/></a> &middot; Powered
+by <a href="http://www.framerd.org/" title="FramerD: Meaningful Computing made Practical"><img src="static/graphics/framerd-logo.png" height="40" alt="FramerD"</a>
+</div>
+</body>
+</html>

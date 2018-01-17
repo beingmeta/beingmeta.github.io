@@ -1,0 +1,261 @@
+<?fdxml load="knoduleshome.scm"?>
+<html>
+<head>
+<title>Knodules Plaintext Microformat</title>
+<link rel="stylesheet" type="text/css" href="http://static.beingmeta.com/fdjt/fdjt.css"/>
+<link rel="stylesheet" type="text/css" href="http://static.beingmeta.com/fdjt/misc.css"/>
+<link rel="stylesheet" type="text/css" href="/knoduleshome.css"/>
+<style>
+</style>
+</head>
+<body>
+<pagehead>Knodules Plaintext Microformat</pagehead>
+
+<p>The plain text representation of knodules is often the simplest way
+to describe terms and their relationships.  This representation is
+also used implicitly in the HTML and XML microformats.  The top level
+of the plaintext representation is simple.  A plaintext knodule is a
+string of unicode characters (in some encoding) which consists of one
+or more <strong>entries</strong> separated by semicolons.  Each entry
+consists of one or more clauses separated by vertical bars.  The
+plaintext representation collapses all whitespace into a single space
+character and removes leading and trailing spaces from all
+clauses.</p>
+
+<p>Leading punctuation in the plaintext format is used to specialize
+entries and clauses.  An entry without any leading punctuation is
+called a <strong>subject entry</strong> and it's first clause
+identifies the <strong>subject</strong>.  Leading punctuation can be
+escaped with a backslash, as can the separator characters of semicolon
+and vertical bar.</p>
+
+<p id="TERMS"><span class="inhead">Terms.</span>  The most basic
+component of any knodule is the <strong>term</strong>.  A term is a
+string of unicode characters with no leading or trailing spaces and
+normalized by collapsing whitespace sequences into a single space
+character (0x20) and normalizing the Unicode encoding.</p>
+
+<p id="DOMAINS"><span class="inhead">Domains.</span>  Knodules are
+always specific to a particular context called
+a <strong>domain</strong>.  Domains look just like Internet hostnames:
+names or numbers separated by periods.  One special kind
+of <term ref="TERMS">term</term> is defined relative to a particular
+domain: a <strong>dterm</strong> is a term which represents a single
+unique meaning with respect to a domain.  Dterms are displayed like
+like &ldquo;<dterm>this</dterm>&rdquo; in this document.</p>
+
+<p id="DTERMS"><inhead>DTerms</inhead> can be regular natural language
+words or phrases (like <dterm>dog</dterm>) if the word or phrase is
+unambiguous in the domain.  Some dterms are natural compounds (like
+<dterm>river bank</dterm>) when another term (like <word>bank</word>)
+may be ambiguous.  <strong>Constructed dterms</strong> are artifical
+terms which disambiguate the meaning of a base term, for example
+<dterm>bank:institution</dterm>.</p>
+
+<!--
+<p>The plaintext microformat can describe relationships among concepts
+described by dterms.  Normally, references to concepts must use a
+declared dterm (i.e. the head of some entry), but
+in <a href="#STRICTNESS">non-strict</a> implementations, any
+unambiguous synonym of the dterm can be used.</p>
+-->
+
+<p id="INTERLINGUAL"><inhead>Translations.</inhead> Every knodule has
+a default language, but the syntax <span
+class="clause">$<var>langid</var>$<var>string</var></span> can be used
+to refer to <var>string</var> in a language identified by
+<var>langid</var> (an ISO639/1 language code).  For example,
+<word>$fr$chien</word> refers to the french word &ldquo;chien.&rdquo;
+This syntax can be used anywhere a term (or dterm) occurs as well as
+with descriptive glosses or references to external URIs or tags.</p>
+
+<p id="ENTRIES"><span class="inhead">Entries and clauses.</span> The
+plain text representation of knodules consists of one or more entries
+separated by semicolons (";" unicode 0x3b).  Entries starting with
+punctuation may have special interpretations but subject entries
+(which don't start with any punctuation) consist of a head <term
+ref="DTERMS">dterm</term> followed by zero or more clauses separated
+by vertical bars (<tt>|</tt>).</p>
+
+<p id="CLAUSES"><span class="inhead">Kinds of clauses.</span> Clauses
+describe relations of dterms with natural language synonyms, other
+dterms, and rules for disambiguating ambiguous natural language into
+dterms.  Clauses are distinguished by their initial punctuation and
+any clause without initial punctuation indicates a simple synonym of
+the subject.  The asterisk (*) and tilde (~) characters can be used as
+modifiers (called 'major' and 'minor' respectively) on either synonyms
+or other relations.  When applied to synonyms, for example, a major
+synonym indicates a term which is commonly used for the corresponding
+dterm; a minor synonym indicates a term which is a 'search hook' that
+might indicate the subject but is not a real synonym.</p>
+
+<p>In addition to the synonym relation between dterms and terms, there
+are seven kinds of relationships between dterms:</p>
+<table class="clausedoc">
+<tr><th>^<var>dterm</var></th><th>genls</th><td></td></tr>
+<tr><th>^*<var>dterm</var></th><th>commonly</th><td></td></tr>
+<tr><th>^~<var>dterm</var></th><th>sometimes</th><td></td></tr>
+<tr><th>_<var>dterm</var></th><th>examples/case</th><td></td></tr>
+<tr><th>_*<var>dterm</var></th><th>typical</th><td></td></tr>
+<tr><th>_~<var>dterm</var></th><th>atypical</th><td></td></tr>
+<tr><th>-<var>dterm</var></th><th>never</th><td></td></tr>
+<tr><th>-*<var>dterm</var></th><th>rarely</th><td></td></tr>
+<tr><th>-*<var>dterm</var></th><th>mightnotbe</th><td></td></tr>
+<tr><th>&<var>dterm</var></th><th>associated</th><td></td></tr>
+<tr><th>&*<var>dterm</var></th><th>defining</th><td></td></tr>
+<tr><th>&~<var>dterm</var></th><th>connected</th><td></td></tr>
+<tr><th>=<var>dterm</var></th><th>equivalent</th><td></td></tr>
+<tr><th>=*<var>dterm</var></th><th>logically equivalent</th><td></td></tr>
+<tr><th>=~<var>dterm</var></th><th>vaugely equivalent</th><td></td></tr>
+<tr><th>^<var>role</var>(<var>dterm</var>)</th><th>hasrole</th><td></td></tr>
+<tr><th>.<var>role</var>=<var>dterm</var></th><th>relation</th><td></td></tr>
+</table>
+
+<p>There are eight kinds of simple clauses:</p>
+<ul>
+<li><span class="clause">*<var>term</var></span> indicates
+a common or preferred synonym.</li>
+
+<li><span class="clause">~<var>phrase</var></span> indicates a "hook
+term" which can refer to the dterm but is not strictly a synonym.  It
+can be a misspelling or common typographic error or a related term
+which does not have its own dterm representation.  Note that it should
+not usually be neccessary to include morphological variants
+(e.g. plurals or inflected forms) among the synonyms or hooks for a
+dterm because the corresponding library or application should handle
+those variations automatically.</li>
+
+<li><span class="clause">^<var>dterm</var></span> indicates a
+<sym>genl</sym> of the dterm: a dterm with broader applicability than
+the dterm itself.</li>
+
+<li><span class="clause">_<var>dterm</var></span> indicates a
+<sym>specl</sym> (the inverse of <sym>genl</sym>) of the dterm: a
+dterm with narrower applicability than the dterm itself.</li>
+
+<li><span class="clause">-<var>disjoin</var></span> indicates
+<var>disjoin</var> is disjoint in application from the subject.</li>
+
+<li><span class="clause">&amp;<var>dterm</var></span> indicates that
+the concept indicated by <var>dterm</var> commonly occurs with the
+subject, while <span class="clause">&amp;-<var>dterm</var></span>
+indicates that the designated concept rarely (practically never)
+occurs with the subject.</li>
+
+<li><span class="clause">%<var>mirror</var></span> indicates that
+<var>mirror</var> is a <em>role</em> which is the relational inverse
+of the subject.  For example, <dterm>parent</dterm> is the mirror of
+<dterm>child</dterm> while <dterm>spouse</dterm> is its own mirror.
+The <sym>mirror</sym> relationship is symmetric (so the
+<sym>mirror</sym> of <sym>mirror</sym> is <sym>mirror</sym>).  Got
+that?</li>
+
+<li><span class="clause">=@<var>uri</var></span> indicates an external
+URI defining or definitive for the concept;</li>
+
+<li><span class="clause">=#<var>tag</var>@<var>site</var></span> or
+<span
+class="clause">=#<var>tag</var>@<var>user</var>@<var>site</var></span>
+indicate a tag at an external tagging site which is associated with
+the subject.</li>
+
+</ul>
+
+<p>There are three kinds of compound clauses:</p>
+<ul>
+
+<li><span class="clause"><var>role</var>=<var>value</var></span>
+asserts that <var>value</var> (a dterm) has a <sym>genl</sym>
+of <var>role</var> with respect to the subject.</li>
+
+<li><span class="clause">^<var>role</var>(<var>val</var>)</span> asserts
+that the subject has a <sum>genl</sym> of <var>role</var> with
+respect to <var>value</var>.</li>
+
+<li><span class="clause"><var>term</var>&amp;<var>context</var></span>
+defines a DRULE (disambiguation rule) meaning that <var>term</var>
+indicates the subject when it occurs with <var>context</var>.  If
+context is enclosed in single quote marks ("&quo;"), it
+indicates a literal context; otherwise it is interpreted as a
+dterm.</li>
+
+<li><span
+class="clause"><var>term</var>&amp;-<var>context</var></span> defines
+a DRULE (disambiguation rule) meaning that <var>term</var>
+<strong>does not indicate</strong> the subject when it occurs with
+<var>context</var>.  The same rules for context apply above.</li>
+</ul>
+
+<p id="STRICTNESS"><inhead>Strictness.</inhead>  A knodules
+application can interpret the microformat <strong>strictly</strong>
+meaning that any non-head or non-synonym reference must be an
+explicit <em>dterm</em> (i.e. something which occurs in the head of an
+entry).  A non-strict interpretation allows non-dterms to be used as
+dterms proving that:
+</p>
+<ol>
+<li>The term is a synonym of a known dterm which is unambiguous in the
+domain;</li>
+<li>the strictness can be disabled generally, for a particular domain,
+or for a particular block of entries; and</li>
+<li>the application signals an exception when a term assumed to be
+unamibugous (1, above) is found to be ambiguous.</li>
+</ol>
+
+<p id="COMPLEXENTRIES"><inhead>Complex entries.</inhead> Entries
+starting with punctuation may be interepreted especially.  The
+simplest of these consists of a normal entry preceded by an asterisk
+and indicates that the subject of the entry is a <strong>key
+concept</strong> in the domain.  This fact be may be used in
+analytics, presentation, or interaction.</p>
+
+<p>The two current kinds of complex entries
+are <strong>disjoins</strong> and <strong>taxpaths</strong>.</p>
+<ul>
+
+<li><inhead>disjoins</inhead> start with a minus sign <unicode
+char="-"/> and are followed by any number of <term
+ref="#SUBJECTENTRIES">subject entries</term>, declaring the mutual
+disjointness among the subjects of the subentries.</li>
+
+<li><inhead>taxpaths</inhead> start with a slash and specify a chain
+of <sym>genls</sym> separated by slashes starting from the initial
+entry.  Each element in the chain is a <term
+ref="#SUBJECTENTRIES">subject entry</term> which is processed to
+provide additional information about the concepts along the way.  When
+one of these embedded subject entries is preceded with an asterisk, it
+indicates that the corresponding term is a "basic type" corresponding
+to the linguistic idea of a "basic-level category".</li>
+
+</ul>
+
+<p id="KNODULEBLOCKS">
+<inhead>Knodule Blocks</inhead> are groups of <em>entries</em>
+together with comments or a small set of control statements.  A
+control statement looks like
+<tt><var>setting</var>=<var>value</var></tt>.  Currently the only
+valid <var>setting</var>s are <tt>domain</tt>, <tt>lang</tt>, and
+<tt>strict</tt>.  <p><inhead>Comments</inhead> are either line
+comments or block comments.  Line comments are prefixed by some
+whitespace and either "<tt>#</tt>" or "<tt>//</tt>".  Block comments
+are enclosed by "<tt>/*</tt>" "<tt>*/</tt>" and may be nested.</p>
+
+<p id="SPECIALCHARACTERS"><inhead>Special characters.</inhead> Any of
+the special characters can be escaped with a single
+backslash.  <!-- The form <tt>\&xxx;</tt> can be used to include the
+Unicode codepoint <tt>xxxx</tt> and the
+form <tt>\&<var>name</var></tt> can be used to include the character
+with the XML entity name <var>name</var> (e.g. <tt>\&para;</tt>
+or <tt>\&middot;</tt>).  For convenience, <tt>\&;</tt> can be used to
+include an ampersand.  --> Note that any special characters outside of
+their designated constructions can be used without escaping.  For
+example, since the ampersand constructions are always followed by
+dterms (which don't have leading spaces), ampersands followed by
+spaces do not need to be escaped (e.g. as in <word>Penn &
+Teller</word>).</p>
+<p>In addition, the standard C escape sequences (such as <tt>\n</tt>)
+are interpreted as the corresponding character and an
+escaped <em>newline</em> is a line continuation character
+causing the newline and any succeeding whitespace to be ignored.</p>
+</body>
+</html>

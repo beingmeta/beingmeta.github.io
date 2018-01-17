@@ -1,0 +1,50 @@
+<?fdxml load="../knoduleshome.scm"?>
+<html>
+<head>
+<title>Knodules HTML Microformat</title>
+<link rel="stylesheet" type="text/css" href="http://static.beingmeta.com/fdjt/fdjt.css"/>
+<link rel="stylesheet" type="text/css" href="http://static.beingmeta.com/fdjt/misc.css"/>
+<link rel="stylesheet" type="text/css" href="/knoduleshome.css"/>
+<style>
+</style>
+</head>
+<body>
+<pagehead>Knodules HTML Microformat</pagehead>
+
+<p>The HTML microformat for Knodules is designed for embedding
+knodules or references to knodules in HTML content.  This microformat
+builds extensively on the <a href="plaintext.html">plaintext</a>
+microformat.</p>
+
+<p>The HTML microformat defines a set of attributes which can be
+assigned to arbitrary HTML markup.  When the HTML application is using
+namespaces, these attributes are all in
+the <tt>http://knodules.net/</tt> namespace.  The two key attributes
+for embedding knodules are <sym>DTERM</sym> and <sym>TAGS</sym>.
+The <sym>DTERM</sym> attribute defines concepts in the current knodule
+and the <sym>TAGS</sym> attribute describes the content of HTML
+items using dterms in the current knodule.</p>
+
+<p>The <sym>DTERM</sym> attribute on an element indicates that the other
+attributes on element describe various relationships to the value of
+the DTERM attribute.  For example,</p>
+<div class="example">
+</div>
+<p>Some of the self-explanatory associated attributes are:
+<sym>genls</sym>, <sym>specls</sym>, <sym>disjoint</sym>, <sym>mirror</sym>,
+<sym>synonyms</sym>.  The values of these attributes can contain
+multiple values separated by semicolons or vertical bars.</p>
+<p>The <sym>drules</sym> attribute provides rules for disambiguting to
+a given dterm.  These have the same form as the DRULE entries in
+the plaintext microformat.</p>
+
+<p>The <sym>TAGS</sym> attribute describes the content of a particular
+HTML element using knodules.  The tags element consists of
+plaintext <term ref="plaintext.fdxml#ENTRIES">subject entries</p>
+which might consist of just the single dterm.  This allows facts about
+dterms to be embedded alongside their reference.</p>
+<div class="example">
+</div>
+
+</body>
+</html>

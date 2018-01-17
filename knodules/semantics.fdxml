@@ -1,0 +1,128 @@
+<?fdxml load="knoduleshome.scm"?>
+<html>
+<head>
+<title>Knodule semantics</title>
+<link rel='stylesheet' type='text/css' 
+      href='http://static.beingmeta.com/fdjt/fdjt.css'/>
+<link rel='stylesheet' type='text/css' 
+      href='http://static.beingmeta.com/fdjt/misc.css'/>
+<link rel='stylesheet' type='text/css' href='knoduleshome.css'/>
+<style>
+  div.cutout { 
+   width: 25%; float: right; padding: 10px; 
+   margin-left: 5px; margin-bottom: 5px; 
+   background-color: gold; color: black;
+   font-size: 80%;}
+  div.cutout span.inhead { color: darkgreen;}
+</style>
+</head>
+<body>
+<pagehead>
+  Knodule Semantics
+  <div class="subtitle">simple things should be simple</div>
+</pagehead>
+
+<p>Knodules are not primarily designed to describe the world but to
+describe <strong>how people talk about the world</strong>.  There is a
+common sense understanding that people sometimes use different words
+or expressions to meaning the same thing.  Knodules are designed to
+articulate these human meanings and make them (partially) accessible
+to automated or interactive services and applications.</p>
+
+<p>Every knodule applies to some limited domain of discourse and is
+organized around "disamgiguated terms" (dterms) that are just regular
+natural language words, phrases, or artificial compounds (like
+<dterm>fish:animal</dterm>).  Knodules describe how words and phrases
+translate into dterms and describe relationships among dterms which
+can be used for search, inference, or other automatic processing.</p>
+
+<p>Assertions about dterms are either <strong>synonyms</strong>
+(e.g. 'dog' can mean <dterm>dog:animal</dterm>),
+<strong>relations</strong> (e.g. <dterm>labrador retriever</dterm> is
+a kind of <dterm>dog:animal</dterm>), or <strong>asides</strong>
+(e.g. <dterm>dog:animal</dterm> is described by the wikipedia article
+<a
+href="http://www.wikipedia.org/Dog">"http://www.wikipedia.org/Dog"</a>.)</p>
+
+<p id="KINDSOFRELATIONS">There are <em>three core kinds</em> of
+relations among dterms: logical relationships (e.g. 'a dog is an
+animal'), role relationships (e.g. 'Padme is the mother of Luke'), and
+associative relationships (e.g. 'gifts are often associated with
+birthdays' or 'mass is defined with respect to acceleration').
+Knodule implementations can combine particular instances of these
+relations with one another to generate implied relationships, a
+process called inference.</p>
+
+<p><inhead>Logical relationships</inhead> are either 'identity
+relations' or 'subsumption relations'.  Identity relations indicate
+that two dterms (possibly in different knodules) refer to the same
+thing (possibly in different aspects).  Subsumption relations indicate
+a connection between the applicability of dterms: for example, if `X
+is a dog, X is always an animal'.</p>
+
+<p><inhead>Identity relations</inhead> have three flavors based on
+their degree of validity.  <dterm>Robust identity</dterm> indicates
+identity relationships which can be used as logical equivalence for
+purposes of inference.  <dterm>Normal identity</dterm> indicates
+identity which can be used in search and may be used for some
+inference.  <dterm>Dodgy identity</dterm> indicates a relationship
+which can only be used in limited, speculative forms of inference or
+broad ranging searches.</p>
+
+<p><inhead>Subsumption relations</inhead> are loosely based on
+Aristotle's <dterm>term logic</dterm> and categorized into positive or
+negative relationships (e.g. 'dogs are always animals' or 'animals are
+never plants') and by three degrees of universality (e.g. 'dogs are
+always animals,' 'dogs are commonly pets', and 'dogs are sometimes
+big').  Negative relations are similarly categorized by universality
+(e.g. 'doctors are always people,' 'doctors are rarely criminals,' and
+'doctors might not be rich').  There are simple rules for combining
+the logical relationships (in Aristotle's term logic, these are called
+syllogisms).</p>
+
+<p id="ROLERELATIONSHIPS"><inhead>Role relationships</inhead> are
+relationships which are described by dterms.  Knodules are limited to
+two place relationships (such as 'Padme is the mother of Luke').  Some
+more complex relationships can be expressed by combining roles with
+subsumption, as in 'birth mother is a kind of mother' and 'Padme is
+the birth mother of Leia'.  Role relationships can also be
+distinguished by whether they support multiple values (the default)
+and by the 'type' of their subjects and objects.</p>
+
+<p id="ASSOCIATIONS"><inhead>Associations</inhead> represent
+relationships between concepts where the nature of the association
+does not correspond to a clearly defined role.  There are three kinds
+of associations: <dterm>differentiations</dterm> are associations
+which define a dterm or distinguish it from other dterms;
+<dterm>correlations</dterm> are associations which are statistically
+significant; affiliations are distant associations which may not be
+statistically significant.</p>
+
+<p id="ASIDES">In addition to synonym (dterm/term) and structural
+(dterm/dterm) relationships, there are three additional properties
+which can be specified for a dterm: glosses, references, and drules.</p>
+
+<p id="GLOSSES"><dterm>Glosses</dterm> are human-readble notes
+associated with particular dterms.  Glosses are either
+<dterm>definitive</dterm> (they define the dterm),
+<dterm>descriptive</dterm> (they expand on the dterm, perhaps
+narrowing its scope or providing additional human-readable
+information), or incidental (any other kind of comment).</p>
+
+<p id="REFERENCES"><dterm>References</dterm> are external references
+(typically URIs) which associated with particular dterms.  They are
+also classified as definitive, descriptive, or incidental, along the
+same lines as glosses.  For example, a definitive reference might
+point to a dictionary reference, a descriptive reference might point
+to an encyclopedia article, and an incidental reference might point to
+a site which refers to the concept.</p>
+
+<p id="DRULES"><dterm>DRules</dterm> are rules for disambiguating human
+natural language into dterms.  Every DRule consists of a natural
+language term (or set of terms) followed by other terms or dterms
+which indicate that the designated terms probably refer to a
+particular dterm.  For example, a DRule might say that when 'dog'
+occurs with 'bark' it means <dterm>dog:animal</dterm>.</p>
+
+</html>
+</body>

@@ -1,0 +1,53 @@
+body {
+  font-family: sans, sans-serif;
+  font-size: 20px;
+  line-height: 125%;
+  max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.pagehead h1 {
+  margin-bottom: 8px;
+}
+div.pagehead h1 img {
+  height: 128px;
+}
+div.pagehead {
+  text-align: center;
+  margin-bottom: 24px;
+}
+div.pagehead div.subhead {
+  line-height: 125%;
+  font-size: 125%;
+}
+a#LOVEABOOKLOGO {
+  position: absolute;
+  right: 12px;
+  top: 1px;
+}
+a#LOVEABOOKLOGO img {
+  height: 64px;
+}
+footer {
+  text-align: right;
+}
+footer span.label {
+  font-variant: small-caps;
+  font-weight: bold;
+  padding-right: 1em;
+}
+.bmlogo span.bmm {
+  color: red;
+}
+.bmlogo span.bme {
+  color: #e46411;
+}
+.bmlogo span.bmt {
+  color: green;
+}
+.bmlogo span.bma {
+  color: blue;
+}
+a.bmlogo {
+  text-decoration: none;
+}

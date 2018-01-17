@@ -1,0 +1,26 @@
+body { 
+    font-family: sans,sans-serif; font-size: 17px;
+    background-color: ivory; 
+    margin-left: 10%; margin-right: 10%;
+    margin-bottom: 20px; margin-top: 5px;}
+p + div { margin-top: 3px; margin-bottom: 3px;}
+p + ul { margin-top: 3px; margin-bottom: 3px;}
+span.var { font-family: fixed; font-style: italic;}
+span.clause { font-family: courier,fixed; font-size: 120%; padding: 3px;}
+
+a.termref { 
+ font-style: italic; color: black; font-size: 110%;
+ text-decoration: none;}
+a.termref:hover { text-decoration: underline;}
+span.sym { font-family: fixed; font-weight: bold;}
+a#BMLOGOTYPE { position: absolute; top: 0px; right: 0px; z-index: 100;}
+a#BMLOGOTYPE img { border: 0px;}
+
+table.clausedoc {}
+table.clausedoc th { 
+  text-align: left; font-weight: normal; font-family: fixed;}
+table.clausedoc tr th:first-child { 
+  text-align: right; font-family: fixed;
+  font-weight: bold; font-family: sans,sans-serif;}
+
+

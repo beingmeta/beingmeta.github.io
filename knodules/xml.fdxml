@@ -1,0 +1,17 @@
+<?fdxml load="../knoduleshome.scm"?>
+<html>
+<head>
+<title>Knodules XML Microformat</title>
+<link rel="stylesheet" type="text/css" href="http://static.beingmeta.com/fdjt/fdjt.css"/>
+<link rel="stylesheet" type="text/css" href="http://static.beingmeta.com/fdjt/misc.css"/>
+<link rel="stylesheet" type="text/css" href="/knoduleshome.css"/>
+<style>
+</style>
+</head>
+<body>
+<pagehead>Knodules XML Microformat</pagehead>
+
+<p>This description is still under construction.</p>
+
+</body>
+</html>
